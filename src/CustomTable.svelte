@@ -1,13 +1,19 @@
 <svelte:options tag="custom-table"/>
 
 <script>
+	export let name;
+	export let age;
+	export let state;
+
 	export let tableItems = [];
+	export let tableItemNames = [];
     let tableColCount = 4;
     $: tableRowCount = Math.ceil(tableItems.length / tableColCount);
 
 	export function addTableItem(tableItemObject) {
         for (const [key, value] of Object.entries(tableItemObject)) {
             tableItems = [...tableItems, value];
+			tableItemNames = [...tableItemNames, key]
         }
 	}
 </script>
@@ -25,6 +31,7 @@
 		min-height: 100px;
 
 		padding: 5px;
+		margin: 5px;
 		border-spacing: 5px;
 
 		border: 2px solid #999;
@@ -48,10 +55,27 @@
     {#each {length: tableRowCount} as _, i}
         <tr>
         {#each tableItems.slice(i*4, i*4+4) as tableItem, j}
-            <td>
-                {tableItem}
+            <td style="background: {tableItem};">
+                {tableItemNames[j]}
             </td>
         {/each}
         </tr>
 	{/each}
 </table>
+
+<table>
+	<tr>
+		<td>Name</td>
+		<td>{name}</td>
+	</tr>
+	<tr>
+		<td>Age</td>
+		<td>{age}</td>
+	</tr>
+	<tr>
+		<td>State</td>
+		<td>{state}</td>
+	</tr>
+</table>
+
+<p>{user}</p>

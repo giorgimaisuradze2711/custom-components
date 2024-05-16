@@ -13,20 +13,27 @@
 	<script defer src='/build/bundle.js'></script>
 </head>
 <body onload="displayTableItems()">
-	<custom-table id="custom-table"></custom-table>
+	<script>
+		const user = {
+			name: "Giorgi",
+			age: 21,
+			state: "Devastated!"
+		}
+	</script>
+	<custom-table name="Giorgi" age=21 state="Devastated!" id="custom-table"/>
 	<script>
 		function displayTableItems(){
 			let data = {
-				IndianRed: "#CD5C5C",
-				Pink: "#FFC0CB",
-				LightSalmon: "#FFA07A",
-				Gold: "#FFD700",
-				Lavender: "#E6E6FA",
-				GreenYellow: "#ADFF2F",
-				Aqua: "#00FFFF",
-				Cornsilk: "#FFF8DC",
-				Gainsboro: "#DCDCDC"
+				"Pastel Red": "#FF6961",
+				"Pastel Orange": "#FFB347",
+				"Pastel Yellow": "#FFD700",
+				"Pastel Green": "#77DD77",
+				"Pastel Blue": "#ADD8E6",
+				"Pastel Purple": "#B19CD9",
+				"Pastel Pink": "#FFB6C1"
 			}
+
+
 			document.getElementById("custom-table").addTableItem(data)
 		}
 	</script>
