@@ -1,19 +1,14 @@
 <svelte:options tag="custom-table"/>
 
 <script>
-	export let name;
-	export let age;
-	export let state;
+    import { each } from "svelte/internal";
 
-	export let tableItems = [];
-	export let tableItemNames = [];
-    let tableColCount = 4;
-    $: tableRowCount = Math.ceil(tableItems.length / tableColCount);
+	export let users = [];
 
 	export function addTableItem(tableItemObject) {
         for (const [key, value] of Object.entries(tableItemObject)) {
-            tableItems = [...tableItems, value];
-			tableItemNames = [...tableItemNames, key]
+			alert(value["name"])
+			users = [...users, value]
         }
 	}
 </script>
@@ -38,6 +33,18 @@
 		border-radius: 5px;
 	}
 
+	th{
+		text-align: center;
+
+		width: 100px;
+		height: 40px;
+
+		background-color: #999;
+
+		border: none;
+		border-radius: 5px;
+	}
+
 	td{
 		text-align: center;
 
@@ -52,30 +59,16 @@
 </style>
 
 <table>
-    {#each {length: tableRowCount} as _, i}
-        <tr>
-        {#each tableItems.slice(i*4, i*4+4) as tableItem, j}
-            <td style="background: {tableItem};">
-                {tableItemNames[j]}
-            </td>
-        {/each}
-        </tr>
+	<tr>
+		<th>Name</th>
+		<th>Age</th>
+		<th>State</th>
+	</tr>
+	{#each users as user}
+	<tr>
+		<td>{user["name"]}</td>
+		<td>{user["age"]}</td>
+		<td>{user["state"]}</td>
+	</tr>
 	{/each}
 </table>
-
-<table>
-	<tr>
-		<td>Name</td>
-		<td>{name}</td>
-	</tr>
-	<tr>
-		<td>Age</td>
-		<td>{age}</td>
-	</tr>
-	<tr>
-		<td>State</td>
-		<td>{state}</td>
-	</tr>
-</table>
-
-<p>{user}</p>

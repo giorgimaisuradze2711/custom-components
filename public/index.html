@@ -13,28 +13,20 @@
 	<script defer src='/build/bundle.js'></script>
 </head>
 <body onload="displayTableItems()">
-	<script>
-		const user = {
-			name: "Giorgi",
-			age: 21,
-			state: "Devastated!"
-		}
-	</script>
-	<custom-table name="Giorgi" age=21 state="Devastated!" id="custom-table"/>
+	<custom-table id="custom-table"/>
 	<script>
 		function displayTableItems(){
-			let data = {
-				"Pastel Red": "#FF6961",
-				"Pastel Orange": "#FFB347",
-				"Pastel Yellow": "#FFD700",
-				"Pastel Green": "#77DD77",
-				"Pastel Blue": "#ADD8E6",
-				"Pastel Purple": "#B19CD9",
-				"Pastel Pink": "#FFB6C1"
-			}
+			let user = [{
+				name: "Giorgi Maisuradze",
+				age: 21,
+				state: "Devastated!",
+			},{
+				name: "John Doe",
+				age: 27,
+				state: "Happy!",	
+			}]
 
-
-			document.getElementById("custom-table").addTableItem(data)
+			document.getElementById("custom-table").addTableItem(user)
 		}
 	</script>
 </body>
