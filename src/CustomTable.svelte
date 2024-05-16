@@ -1,7 +1,13 @@
 <svelte:options tag = "custom-element"/>
 
 <script>
-	export let tableItems= ["ItemOne","ItemTwo"];
+	export let tableItems= [];
+
+	export function addTableItem(tableItemObject) {
+        for (const [key, value] of Object.entries(tableItemObject)) {
+            tableItems = [...tableItems, value];
+        }
+	}
 </script>
 
 <style>
@@ -11,6 +17,9 @@
 		font-family: "Poppins", sans-serif;
 		color: #FFF;
 		font-weight: bold;
+
+		min-width: 100px;
+		min-height: 100px;
 
 		padding: 5px;
 		border-spacing: 5px;

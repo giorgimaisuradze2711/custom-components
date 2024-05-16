@@ -3,7 +3,7 @@ import CustomTable from './CustomTable.svelte';
 const customTable = new CustomTable({
 	target: document.body,
 	props: {
-		tableItems: ["ItemOne","ItemTwo"]
+		tableItems: ["ItemOne","ItemTwo","ItemThree"]
 	}
 });
 
