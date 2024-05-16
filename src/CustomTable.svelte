@@ -2,6 +2,8 @@
 
 <script>
 	export let tableItems= [];
+	let tableColCount = 4;
+    $: tableRowCount = Math.ceil(tableItems.length / tableColCount);
 
 	export function addTableItem(tableItemObject) {
         for (const [key, value] of Object.entries(tableItemObject)) {
@@ -28,10 +30,6 @@
 		border-radius: 5px;
 	}
 
-	tr{
-
-	}
-
 	td{
 		text-align: center;
 
@@ -46,11 +44,13 @@
 </style>
 
 <table>
-	{#each tableItems as tableItem }
-		<tr>
-			<td>
-				{tableItem}
-			</td>
-		</tr>
+    {#each {length: tableRowCount} as _, i}
+        <tr>
+        {#each tableItems.slice(i*4, i*4+4) as tableItem, j}
+            <td>
+                {tableItem}
+            </td>
+        {/each}
+        </tr>
 	{/each}
 </table>

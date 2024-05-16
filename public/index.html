@@ -12,10 +12,23 @@
 
 	<script defer src='/build/bundle.js'></script>
 </head>
-	<script>
-		tableItems = ["adasd",'asdasd','asdasdas']
-	</script>
 	<custom-table></custom-table>
+	<script>
+		let data = {
+			"New_Color50": "#d99fff",
+			"New_Color100": "#c977ff",
+			"New_Color200": "#b950ff",
+			"New_Color300": "#a928ff",
+			"New_Color400": "#9900ff",
+			"New_Color500": "#8907e1",
+			"New_Color600": "#7a0cc3",
+			"New_Color700": "#6b11a8",
+			"New_Color800": "#5d138e",
+			"New_Color900": "#4e1575"
+		}
+		alert(data)
+		document.getElementById("custom-table").addTableItem(data)
+</script>
 <body>
 </body>
 </html>
