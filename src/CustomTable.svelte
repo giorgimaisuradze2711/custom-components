@@ -7,7 +7,6 @@
 
 	export function addTableItem(tableItemObject) {
         for (const [key, value] of Object.entries(tableItemObject)) {
-			alert(value["name"])
 			users = [...users, value]
         }
 	}
@@ -25,36 +24,38 @@
 		min-width: 100px;
 		min-height: 100px;
 
-		padding: 5px;
 		margin: 5px;
-		border-spacing: 5px;
+		border-spacing: 10px;
 
 		border: 2px solid #999;
 		border-radius: 5px;
 	}
 
-	th{
+	tr *{
 		text-align: center;
 
 		width: 100px;
 		height: 40px;
 
-		background-color: #999;
-
 		border: none;
+	}
+
+	tr:nth-child(1n) td{
+		border-radius: 0 0 5px 5px;
+
+	}
+
+	tr:nth-child(2n) td{
+		border-radius: 5px 5px 0 0;
+	}
+
+	th{
+		background: linear-gradient(35deg,#4B0082,#800080);
 		border-radius: 5px;
 	}
 
 	td{
-		text-align: center;
-
-		width: 100px;
-		height: 100px;
-
 		background-color: #999;
-
-		border: none;
-		border-radius: 5px;
 	}
 </style>
 

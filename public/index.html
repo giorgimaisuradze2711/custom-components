@@ -12,22 +12,43 @@
 
 	<script defer src='/build/bundle.js'></script>
 </head>
-<body onload="displayTableItems()">
+<body>
 	<custom-table id="custom-table"/>
 	<script>
-		function displayTableItems(){
+		window.onload = function() {
 			let user = [{
-				name: "Giorgi Maisuradze",
-				age: 21,
-				state: "Devastated!",
-			},{
-				name: "John Doe",
-				age: 27,
-				state: "Happy!",	
-			}]
+				"name": "John",
+				"age": 30,
+				"state": "California"
+				},
+				{
+				"name": "Alice",
+				"age": 25,
+				"state": "New York"
+				},
+				{
+				"name": "Michael",
+				"age": 35,
+				"state": "Texas"
+				},
+				{
+				"name": "Emily",
+				"age": 28,
+				"state": "Florida"
+				},
+				{
+				"name": "David",
+				"age": 40,
+				"state": "Washington"
+				},
+				{
+				"name": "Sophia",
+				"age": 22,
+				"state": "Illinois"
+				}]
 
 			document.getElementById("custom-table").addTableItem(user)
-		}
+		};
 	</script>
 </body>
 </html>
