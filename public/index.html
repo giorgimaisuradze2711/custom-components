@@ -10,45 +10,19 @@
 	<link rel='stylesheet' href='/global.css'>
 	<link rel='stylesheet' href='/build/bundle.css'>
 
+	<script>
+        // Define the initial array in a global variable
+        window.initialItems = [
+			{name: "Alice Johnson", age: 28, state: "California"},
+			{name: "Bob Smith", age: 34, state: "Texas"},
+			{name: "Catherine Brown", age: 22, state: "New York"},
+			{name: "David Wilson", age: 45, state: "Florida"}
+		]
+    </script>
+
 	<script defer src='/build/bundle.js'></script>
 </head>
 <body>
 	<custom-table id="custom-table"/>
-	<script>
-		window.onload = function() {
-			let user = [{
-				"name": "John",
-				"age": 30,
-				"state": "California"
-				},
-				{
-				"name": "Alice",
-				"age": 25,
-				"state": "New York"
-				},
-				{
-				"name": "Michael",
-				"age": 35,
-				"state": "Texas"
-				},
-				{
-				"name": "Emily",
-				"age": 28,
-				"state": "Florida"
-				},
-				{
-				"name": "David",
-				"age": 40,
-				"state": "Washington"
-				},
-				{
-				"name": "Sophia",
-				"age": 22,
-				"state": "Illinois"
-				}]
-
-			document.getElementById("custom-table").addTableItem(user)
-		};
-	</script>
 </body>
 </html>
