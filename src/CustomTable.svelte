@@ -3,14 +3,13 @@
 <script>
     import { each } from "svelte/internal";
 
-	export let data  = window.initialItems;
-	let tableItems = []
+	export let users = [];
 
-	$: if (data.length > 0) {
-        for (const [key, value] of Object.entries(data)) {
-			tableItems = [...tableItems, value]
+	export function addTableItem(tableItemObject) {
+        for (const [key, value] of Object.entries(tableItemObject)) {
+			users = [...users, value]
         }
-    }
+	}
 </script>
 
 
@@ -66,11 +65,11 @@
 		<th>Age</th>
 		<th>State</th>
 	</tr>
-	{#each tableItems as tableItem}
+	{#each users as user}
 	<tr>
-		<td>{tableItem["name"]}</td>
-		<td>{tableItem["age"]}</td>
-		<td>{tableItem["state"]}</td>
+		<td>{user["name"]}</td>
+		<td>{user["age"]}</td>
+		<td>{user["state"]}</td>
 	</tr>
 	{/each}
 </table>
